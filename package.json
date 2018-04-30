@@ -10,7 +10,7 @@
     "start_docker" :  "docker run -d -p 3000 stefanreichert/hello-kubernetes",
     "create_kube" : "kubectl create -f deployment.yml --save-config",
     "start_kube": "kubectl run hello-kubernetes --image=stefanreichert/hello-kubernetes:latest",
-    "expose_kube": "kubectl expose deployment hello-kubernetes --port=3000 --type=LoadBalancer"
+    "expose_kube": "kubectl expose deployment hello-kubernetes --port=3000 --type=NodePort"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
