@@ -1,0 +1,23 @@
+{
+  "name": "kubernetes-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build_docker": "docker build -t stefanreichert/hello-kubernetes .",
+    "push_docker": "docker push stefanreichert/hello-kubernetes",
+    "start_docker" :  "docker run -d -p 3000 stefanreichert/hello-kubernetes",
+    "validate_kube": "kubectl create --validate  -f --image=stefanreichert/hello-kubernetes:latest",
+    "create_kube" : "kubectl create -f deployment.yml --save-config",
+    "start_kube": "kubectl run hello-kubernetes --image=stefanreichert/hello-kubernetes:latest",
+    "expose_kube": "kubectl expose deployment hello-kubernetes --port=3000 --type=LoadBalancer"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  }
+}
