@@ -1,10 +1,10 @@
 # Hello Kubernetes
 A simple NodeJS app that is supposed to be containerized via docker and deployed to a minikube kubernetes cluster.
 
-### Prequisites
+### Prequisites (+ brew casks for Mac)
 * Minikube --> brew cask install minikube
 * Docker --> brew cask install docker
-* VMWare Fusion -brew cask install vmwarefusion
+* VMWare Fusion --> brew cask install vmwarefusion
 
 ### npm
 The package.jso contains all relevant scripts required:
