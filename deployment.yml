@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: kubernetes-test
+  name: hello-kubernetes
 spec:
   replicas: 1
   template:
     metadata:
       labels: # labels to select/identify the deployment
-        app: kubernetes-test  
+        app: hello-kubernetes
     spec:     # pod spec                  
       containers: 
-      - name: kubernetes-test 
-        image: kubernetes-test:latest # image we pushed
+      - name: hello-kubernetes
+        image: stefanreichert/hello-kubernetes:latest # image we pushed
         ports:
         - containerPort: 3000

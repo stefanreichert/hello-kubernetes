@@ -1,13 +1,13 @@
 {
-  "name": "kubernetes-test",
+  "name": "hello-kubernetes",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "init_minikube": "minikube start",
     "build_docker": "docker build -t stefanreichert/hello-kubernetes .",
     "push_docker": "docker push stefanreichert/hello-kubernetes",
     "start_docker" :  "docker run -d -p 3000 stefanreichert/hello-kubernetes",
-    "validate_kube": "kubectl create --validate  -f --image=stefanreichert/hello-kubernetes:latest",
     "create_kube" : "kubectl create -f deployment.yml --save-config",
     "start_kube": "kubectl run hello-kubernetes --image=stefanreichert/hello-kubernetes:latest",
     "expose_kube": "kubectl expose deployment hello-kubernetes --port=3000 --type=LoadBalancer"
